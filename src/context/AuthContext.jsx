@@ -36,20 +36,16 @@ export const AuthProvider = ({ children }) => {
 
         };
 
-        console.log('Login attempt:', { username, password }); // Debug log
-
         if (validCredentials[username] && validCredentials[username] === password) {
             const userData = {
                 username,
                 loginTime: new Date().toISOString()
             };
 
-            console.log('Login successful, setting user:', userData); // Debug log
             setUser(userData);
             localStorage.setItem('bvexp_user', JSON.stringify(userData));
             return { success: true };
         } else {
-            console.log('Login failed - invalid credentials'); // Debug log
             return {
                 success: false,
                 error: 'Invalid username or password'
