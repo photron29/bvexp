@@ -1,4 +1,3 @@
-import { FaEdit, FaTrash } from 'react-icons/fa';
 import { getCategoryIcon, getCategoryColor } from '../../constants/categories';
 import './ExpenseItem.css';
 
@@ -50,7 +49,7 @@ const ExpenseItem = ({ expense, onDelete, onEdit }) => {
                     className="action-btn edit-btn"
                     title="Edit expense"
                 >
-                    <FaEdit />
+                    <i className="fa-solid fa-pen-to-square" />
                 </button>
 
                 <button
@@ -58,7 +57,7 @@ const ExpenseItem = ({ expense, onDelete, onEdit }) => {
                     className="action-btn delete-btn"
                     title="Delete expense"
                 >
-                    <FaTrash />
+                    <i className="fa-solid fa-trash" />
                 </button>
             </div>
         </div>

@@ -1,12 +1,18 @@
 import { Link, useLocation } from 'react-router-dom';
-import { FaHome, FaChartBar, FaPlus, FaWallet } from 'react-icons/fa';
+import { FaHome, FaChartBar, FaPlus, FaWallet, FaSignOutAlt, FaUser } from 'react-icons/fa';
+import { useAuth } from '../../context/AuthContext';
 import './Header.css';
 
 const Header = () => {
     const location = useLocation();
+    const { user, logout } = useAuth();
 
     const isActive = (path) => {
         return location.pathname === path;
+    };
+
+    const handleLogout = () => {
+        logout();
     };
 
     return (
@@ -14,7 +20,7 @@ const Header = () => {
             <div className="header-container">
                 <div className="logo">
                     <FaWallet className="logo-icon" />
-                    <h1>Expense Tracker</h1>
+                    <h1>Bvexp Logger</h1>
                 </div>
 
                 <nav className="nav">
@@ -41,6 +47,20 @@ const Header = () => {
                         <FaPlus className="nav-icon" />
                         <span>Add Expense</span>
                     </Link>
+
+                    <div className="user-section">
+                        <div className="user-info">
+                            <FaUser className="user-icon" />
+                            <span className="username">{user?.username}</span>
+                        </div>
+                        <button
+                            onClick={handleLogout}
+                            className="logout-btn"
+                            title="Logout"
+                        >
+                            <i class="fa-solid fa-right-from-bracket" />
+                        </button>
+                    </div>
                 </nav>
             </div>
         </header>

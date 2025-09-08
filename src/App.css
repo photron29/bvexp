@@ -48,14 +48,16 @@ body {
 }
 
 .btn-secondary {
-  background-color: #f8f9fa;
+  background-color: white;
   color: #6c757d;
-  border: 2px solid #e9ecef;
+  border: 2px solid #6c757d;
+  box-shadow: 0 2px 4px rgba(108, 117, 125, 0.1);
 }
 
 .btn-secondary:hover:not(:disabled) {
-  background-color: #e9ecef;
-  border-color: #dee2e6;
+  background-color: #6c757d;
+  color: white;
+  box-shadow: 0 4px 8px rgba(108, 117, 125, 0.3);
 }
 
 /* Form styles */
@@ -126,6 +128,36 @@ body {
 
 .mt-4 {
   margin-top: 2rem;
+}
+
+/* Loading container for authentication */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  color: #666;
+}
+
+.loading-container .spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* Responsive design */

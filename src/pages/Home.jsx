@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useExpense } from '../context/ExpenseContext';
-import { FaCalendarAlt, FaReceipt, FaChartLine, FaChartPie, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { FaCalendarAlt, FaReceipt, FaChartLine, FaChartPie } from 'react-icons/fa';
 import { EXPENSE_CATEGORIES, getCategoryIcon, getCategoryColor } from '../constants/categories';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 import './Home.css';
@@ -145,7 +145,7 @@ const Home = () => {
                     className="nav-btn"
                     title="Previous month"
                 >
-                    <FaChevronLeft />
+                    <i className="fa-solid fa-chevron-left" />
                 </button>
 
                 <div className="month-display">
@@ -166,7 +166,7 @@ const Home = () => {
                     className="nav-btn"
                     title="Next month"
                 >
-                    <FaChevronRight />
+                    <i className="fa-solid fa-chevron-right" />
                 </button>
             </div>
 
