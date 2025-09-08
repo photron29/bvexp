@@ -28,10 +28,10 @@ function App() {
       testElement.className = 'fas fa-check';
       testElement.style.visibility = 'hidden';
       document.body.appendChild(testElement);
-      
+
       const isLoaded = window.getComputedStyle(testElement).fontFamily.includes('Font Awesome');
       document.body.removeChild(testElement);
-      
+
       if (isLoaded) {
         clearTimeout(timer);
         setIsLoading(false);
@@ -40,7 +40,7 @@ function App() {
 
     // Check Font Awesome loading
     const fontCheck = setInterval(checkFontAwesome, 100);
-    
+
     // Fallback timeout
     setTimeout(() => {
       clearInterval(fontCheck);

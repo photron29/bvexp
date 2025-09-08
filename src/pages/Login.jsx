@@ -24,22 +24,16 @@ const Login = () => {
         setError('');
         setLoading(true);
 
-        console.log('Form submitted with:', { username, password }); // Debug log
-
         try {
             const result = await login(username, password);
-            console.log('Login result:', result); // Debug log
 
             if (result.success) {
-                console.log('Login successful, navigating to dashboard'); // Debug log
                 // Login successful, redirect to dashboard
                 navigate('/', { replace: true });
             } else {
-                console.log('Login failed:', result.error); // Debug log
                 setError(result.error);
             }
         } catch (error) {
-            console.error('Login error:', error); // Debug log
             setError('An error occurred during login');
         } finally {
             setLoading(false);
